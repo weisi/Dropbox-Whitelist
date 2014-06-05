@@ -97,7 +97,7 @@ let rec traverseDir (dir: DirectoryInfo) =
                              traverseDir subdir
         | Some(true)  -> ()
 
-let fixPath path = "'" + path + "'"
+let fixPath (path: string) = "'" + path.Replace("'","\\'") + "'"
 
 let rec main() = 
 
