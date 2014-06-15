@@ -91,7 +91,8 @@ let rec traverseDir (dir: DirectoryInfo) =
         | Some(false) -> for file in dir.GetFiles() do
                              if (file.Attributes &&& FileAttributes.Hidden)
                                 <> FileAttributes.Hidden 
-                             && (file.ToString() |> isInWhiteList) = None then
+                             && (file.ToString() |> getRelativePath
+                                                 |> isInWhiteList) = None then
                                  toAdd <- (file.ToString()) :: toAdd
                          for subdir in dir.GetDirectories() do
                              traverseDir subdir
