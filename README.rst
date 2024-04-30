@@ -1,14 +1,14 @@
 =================
-Dropbox-Whitelist
+Dropbox-Allowlist
 =================
 
 :author:    Weisi Dai <weisi@x-research.com>
 :date:      Jun 4, 2014
 :license:   MIT License
 
-Want to sync **only** selected directories on your Linux server? Dropbox's selective sync is not enough, because it's a *blacklist* strategy rather than a *whitelist* one.
+Want to sync **only** selected directories on your Linux server? Dropbox's selective sync is not enough, because it's a *disallowlist* strategy rather than a *allowlist* one.
 
-This utility makes use the ``dropbox exclude`` command to implement the *whitelist* scheme. Actually it tries to exclude all the directories that should be excluded.
+This utility makes use the ``dropbox exclude`` command to implement the *allowlist* scheme. Actually it tries to exclude all the directories that should be excluded.
 
 It's written in F# so we need the F# compiler ``fsharpc`` and the .Net runtime ``mono``.
 
@@ -17,7 +17,7 @@ Quickstart
 
 #. Clone this repo to a folder, say, ``~/dwlist``. Go into the directory.
 
-#. Write a whitelist file and save it to ``~/dropbox.wlist`` using the following format::
+#. Write a allowlist file and save it to ``~/dropbox.wlist`` using the following format::
 
     Files/Directory/A
     Files/Directory/B
